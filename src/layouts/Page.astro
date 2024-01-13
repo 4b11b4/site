@@ -10,16 +10,18 @@ import FormattedDate from "../components/FormattedDate.astro";
 
 export interface Props {
 	title: string;
+	headline: string;
 	description: string;
 	modDate: Date;
 }
 
-const { title, description, modDate } = Astro.props as Props;
+const { title, headline, description, modDate } = Astro.props as Props;
 ---
 
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
+
 		<style>
 			main {
 				width: calc(100% - 2em);
@@ -67,7 +69,7 @@ const { title, description, modDate } = Astro.props as Props;
 			<article>
 				<div class="prose">
 					<div class="title">
-						<h1>{title}</h1>
+						<h1>{headline}</h1>
 						<h5>{description}</h5>
 						<div class="date">
 							{
