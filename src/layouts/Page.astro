@@ -13,11 +13,11 @@ export interface Props {
 	headline: string;
 	description: string;
 	first: Date;
-	updates: number;
+	revisions: string;
 	last: Date;
 }
 
-const { title, headline, description, first, last, updates } =
+const { title, headline, description, first, last, revisions } =
 	Astro.props as Props;
 ---
 
@@ -88,7 +88,7 @@ const { title, headline, description, first, last, updates } =
 							{
 								last && (
 									<div class="last-updated-on">
-										Revision {updates}
+										Revision {revisions}
 										<br />
 										<FormattedDate date={last} />
 									</div>
